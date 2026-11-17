@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68,<83", "wheel>=0.42,<0.48"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rv15-forecasting-engine"
+version = "0.1.0"
+description = "Offline RV15 variance forecasting, immutable replay and paired evaluation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0,<3",
+  "pandas>=2.2,<3",
+  "matplotlib>=3.9,<4",
+  "tzdata>=2024.1",
+]
+
+[project.scripts]
+rv15 = "rv15.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
